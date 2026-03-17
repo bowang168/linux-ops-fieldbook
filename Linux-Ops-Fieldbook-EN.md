@@ -5,7 +5,6 @@
 ---
 
 **Author: Bo Wang**
-📧 v0279158888@gmail.com | [GitHub](https://github.com/bowang168) | [LinkedIn](https://www.linkedin.com/in/bowang168) | [Blog](https://bowang168.github.io)
 **Version: v1.0 | 2026 Edition**
 
 ---
@@ -16,10 +15,11 @@ This book is written for experienced Linux engineers, SREs, DevOps practitioners
 
 ---
 
-## 📖 About the Author
+## About the Author
 
 **Bo Wang** is a Principal Technical Support Engineer at Oracle New Zealand with 17 years of enterprise IT experience across Oracle and IBM. He holds RHCE, CCNP, PMP, and OCI certifications. His expertise spans Linux kernel tuning, cloud infrastructure (OCI, AWS), storage architecture, network performance optimization, and large-scale incident response across 1,200+ production environments. This book distills years of frontline troubleshooting notes and best practices into a structured, actionable reference.
 
+- Email: v0279158888@gmail.com
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
 - LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)
 - Blog: [bowang168.github.io](https://bowang168.github.io)
@@ -1430,16 +1430,10 @@ journalctl -u <service> --since today        # Service logs
 
 ---
 
-## 📝 Copyright
+## Copyright
 
-**Linux Ops Fieldbook v1.0** © 2026 Bo Wang. All rights reserved.
+**Linux Ops Fieldbook v1.0** (c) 2026 Bo Wang. All rights reserved.
 
 This book is based on the author's years of production environment experience. All commands and configurations reference publicly available Linux distribution documentation and community best practices.
-
-📧 Contact: v0279158888@gmail.com
-🔗 GitHub: [github.com/bowang168](https://github.com/bowang168)
-🔗 LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)
-
----
 
 *Last updated: March 2026 | Compatible with RHEL/Rocky/Alma/Oracle Linux 8.x & 9.x*

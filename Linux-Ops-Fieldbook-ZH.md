@@ -5,7 +5,6 @@
 ---
 
 **作者：Bo Wang (王波)**
-📧 v0279158888@gmail.com | [GitHub](https://github.com/bowang168) | [LinkedIn](https://www.linkedin.com/in/bowang168) | [Blog](https://bowang168.github.io)
 **版本：v1.0 | 2026 Edition**
 
 ---
@@ -16,13 +15,14 @@
 
 ---
 
-## 📖 关于作者
+## 关于作者
 
 **Bo Wang (王波)** — Oracle 新西兰首席技术支持工程师，拥有 17 年企业级 IT 经验，先后任职于 IBM 和 Oracle。持有 RHCE、CCNP、PMP、OCI 等多项专业认证。在 Linux 内核调优、云基础设施 (OCI, AWS)、存储架构、网络性能优化和大规模故障排查（1,200+ 生产环境）方面有深厚的实战积累。本书源自作者多年一线支持工作中总结的排障笔记和最佳实践，经过系统化整理后面向社区分享。
 
+- 邮箱: v0279158888@gmail.com
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
 - LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)
-- Blog: [bowang168.github.io](https://bowang168.github.io)
+- 博客: [bowang168.github.io](https://bowang168.github.io)
 
 ---
 
@@ -2132,16 +2132,10 @@ grep -E "error|fail|critical" /var/log/messages | \
 
 ---
 
-## 📝 版权声明
+## 版权声明
 
-**Linux Ops Fieldbook v1.0** © 2026 Bo Wang. All rights reserved.
+**Linux Ops Fieldbook v1.0** (c) 2026 Bo Wang. All rights reserved.
 
 本书内容基于作者多年生产环境实战经验编写。所有命令和配置均基于公开的 Linux 发行版文档和社区最佳实践。
-
-📧 联系作者: v0279158888@gmail.com
-🔗 GitHub: [github.com/bowang168](https://github.com/bowang168)
-🔗 LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)
-
----
 
 *Last updated: March 2026 | Compatible with RHEL/Rocky/Alma/Oracle Linux 8.x & 9.x*
