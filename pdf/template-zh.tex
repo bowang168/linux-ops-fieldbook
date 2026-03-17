@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt,a4paper,openany]{report}
 
 \usepackage[margin=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{fontspec}
@@ -22,6 +22,7 @@
 }
 
 \usepackage{graphicx}
+\usepackage{eso-pic}
 \usepackage{framed}
 \usepackage{calc}
 \usepackage{longtable}
@@ -67,11 +68,10 @@ $endif$
 \begin{document}
 
 % Cover page
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{pdf/cover-dark.png}}}
 \thispagestyle{empty}
-\newgeometry{margin=0pt}
-\noindent\includegraphics[width=\paperwidth,height=\paperheight]{pdf/cover-dark.png}
-\restoregeometry
-\clearpage
+\null\clearpage
 
 % Title page
 \thispagestyle{empty}
