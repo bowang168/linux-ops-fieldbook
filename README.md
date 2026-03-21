@@ -1,5 +1,8 @@
 # Linux Ops Fieldbook
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat-square&logo=buy-me-a-coffee)](https://buymeacoffee.com/bowang168)
+[![Sponsor](https://img.shields.io/badge/GitHub%20Sponsors-sponsor-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/bowang168)
+
 **Production Troubleshooting & Performance Guide for RHEL-based Linux**
 
 > *"In production, you don't need to know everything — you need to know where to look in 5 minutes."*
@@ -39,6 +42,13 @@ A practical, structured reference for experienced Linux engineers, SREs, DevOps 
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
 - LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)
 - Blog: [bowang168.github.io](https://bowang168.github.io)
+
+## Support This Project
+
+If this guide saved you time, consider:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat-square&logo=buy-me-a-coffee)](https://buymeacoffee.com/bowang168)
+[![Sponsor](https://img.shields.io/badge/GitHub%20Sponsors-sponsor-ea4aaa?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/bowang168)
 
 ## License
 
