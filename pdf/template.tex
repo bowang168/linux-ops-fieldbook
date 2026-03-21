@@ -8,6 +8,8 @@
 \usepackage{xcolor}
 \definecolor{chaptercolor}{HTML}{1A73E8}
 \definecolor{linkcolor}{HTML}{1A73E8}
+\definecolor{codebg}{HTML}{F5F5F5}
+\definecolor{codeborder}{HTML}{DDDDDD}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -26,8 +28,44 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{mdframed}
+\usepackage{fancyvrb}
 
-% Fix pandoc longtable: define missing 'none' counter and caption type
+% Styled code blocks
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  fontsize=\small,
+  xleftmargin=1em,
+  xrightmargin=1em
+}
+
+\surroundwithmdframed[
+  backgroundcolor=codebg,
+  linecolor=codeborder,
+  linewidth=0.5pt,
+  roundcorner=4pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{Highlighting}
+
+\surroundwithmdframed[
+  backgroundcolor=codebg,
+  linecolor=codeborder,
+  linewidth=0.5pt,
+  roundcorner=4pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{verbatim}
+
+% Fix pandoc longtable
 \newcounter{none}
 \renewcommand{\thenone}{}
 \makeatletter
@@ -74,7 +112,7 @@ $endif$
 % Title page
 \thispagestyle{empty}
 \begin{center}
-\vspace*{4cm}
+\vspace*{3cm}
 {\Huge\bfseries\color{chaptercolor} Linux Ops Fieldbook}
 
 \vspace{1cm}
@@ -83,28 +121,69 @@ $endif$
 \vspace{0.5cm}
 {\large RHEL 8/9 | Rocky | Alma | Oracle Linux}
 
-\vspace{3cm}
+\vspace{2.5cm}
 {\Large Bo Wang}
 
 \vspace{0.3cm}
 {\normalsize Principal Technical Support Engineer | Oracle New Zealand}
 
-\vspace{0.3cm}
-{\small v0279158888@gmail.com}
-
+\vspace{0.2cm}
 {\small github.com/bowang168 | linkedin.com/in/bowang168}
 
 \vspace{2cm}
 {\large v1.0 | 2026 Edition}
+
+\vspace{1.5cm}
+\hrule
+\vspace{0.5cm}
+{\normalsize\textbf{Support This Project}}
+
+\vspace{0.3cm}
+{\small If this guide saved you time, please consider supporting:}
+
+\vspace{0.2cm}
+{\small \textcolor{linkcolor}{\textbf{Buy Me a Coffee:}} \url{https://buymeacoffee.com/bowang168}}
+
+\vspace{0.1cm}
+{\small \textcolor{linkcolor}{\textbf{GitHub Sponsors:}} \url{https://github.com/sponsors/bowang168}}
 \end{center}
 \cleardoublepage
 
-% TOC on its own page
+% TOC
 \thispagestyle{empty}
 \tableofcontents
 \cleardoublepage
 
 % Content
 $body$
+
+% Back page
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{6cm}
+{\Large\bfseries Thank you for reading}
+
+\vspace{1cm}
+{\normalsize If you found this guide useful, please consider:}
+
+\vspace{1cm}
+{\large \textcolor{linkcolor}{\textbf{Buy Me a Coffee}}}
+
+{\normalsize \url{https://buymeacoffee.com/bowang168}}
+
+\vspace{0.8cm}
+{\large \textcolor{linkcolor}{\textbf{GitHub Sponsors}}}
+
+{\normalsize \url{https://github.com/sponsors/bowang168}}
+
+\vspace{0.8cm}
+{\large \textcolor{linkcolor}{\textbf{Star on GitHub}}}
+
+{\normalsize \url{https://github.com/bowang168/linux-ops-fieldbook}}
+
+\vspace{2cm}
+{\small MIT License | Created by Bo Wang | 2026}
+\end{center}
 
 \end{document}

@@ -10,6 +10,8 @@
 \usepackage{xcolor}
 \definecolor{chaptercolor}{HTML}{1A73E8}
 \definecolor{linkcolor}{HTML}{1A73E8}
+\definecolor{codebg}{HTML}{F5F5F5}
+\definecolor{codeborder}{HTML}{DDDDDD}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -18,7 +20,7 @@
     urlcolor=linkcolor,
     citecolor=linkcolor,
     pdfauthor={Bo Wang},
-    pdftitle={Linux Ops Fieldbook}
+    pdftitle={Linux Ops Fieldbook — 生产环境排障与性能优化实战手册}
 }
 
 \usepackage{graphicx}
@@ -28,6 +30,42 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{mdframed}
+\usepackage{fancyvrb}
+
+% Styled code blocks
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  fontsize=\small,
+  xleftmargin=1em,
+  xrightmargin=1em
+}
+
+\surroundwithmdframed[
+  backgroundcolor=codebg,
+  linecolor=codeborder,
+  linewidth=0.5pt,
+  roundcorner=4pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{Highlighting}
+
+\surroundwithmdframed[
+  backgroundcolor=codebg,
+  linecolor=codeborder,
+  linewidth=0.5pt,
+  roundcorner=4pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=10pt,
+  skipbelow=10pt
+]{verbatim}
 
 % Fix pandoc longtable
 \newcounter{none}
@@ -39,8 +77,8 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\textit{Linux Ops Fieldbook}}
-\fancyhead[R]{\small\textit{Bo Wang}}
+\fancyhead[L]{\small\textit{Linux Ops Fieldbook — 实战手册}}
+\fancyhead[R]{\small\textit{Bo Wang (王波)}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -76,7 +114,7 @@ $endif$
 % Title page
 \thispagestyle{empty}
 \begin{center}
-\vspace*{4cm}
+\vspace*{3cm}
 {\Huge\bfseries\color{chaptercolor} Linux Ops Fieldbook}
 
 \vspace{1cm}
@@ -85,19 +123,31 @@ $endif$
 \vspace{0.5cm}
 {\large RHEL 8/9 | Rocky | Alma | Oracle Linux}
 
-\vspace{3cm}
+\vspace{2.5cm}
 {\Large Bo Wang (王波)}
 
 \vspace{0.3cm}
 {\normalsize Oracle 新西兰 首席技术支持工程师}
 
-\vspace{0.3cm}
-{\small v0279158888@gmail.com}
-
+\vspace{0.2cm}
 {\small github.com/bowang168 | linkedin.com/in/bowang168}
 
 \vspace{2cm}
 {\large v1.0 | 2026 Edition}
+
+\vspace{1.5cm}
+\hrule
+\vspace{0.5cm}
+{\normalsize\textbf{支持本项目}}
+
+\vspace{0.3cm}
+{\small 如果这本手册帮到了你，欢迎请作者喝杯咖啡：}
+
+\vspace{0.2cm}
+{\small \textcolor{linkcolor}{\textbf{Buy Me a Coffee:}} \url{https://buymeacoffee.com/bowang168}}
+
+\vspace{0.1cm}
+{\small \textcolor{linkcolor}{\textbf{GitHub Sponsors:}} \url{https://github.com/sponsors/bowang168}}
 \end{center}
 \cleardoublepage
 
@@ -108,5 +158,34 @@ $endif$
 
 % Content
 $body$
+
+% Back page
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{6cm}
+{\Large\bfseries 感谢阅读}
+
+\vspace{1cm}
+{\normalsize 如果这本手册对你有帮助，欢迎通过以下方式支持：}
+
+\vspace{1cm}
+{\large \textcolor{linkcolor}{\textbf{Buy Me a Coffee}}}
+
+{\normalsize \url{https://buymeacoffee.com/bowang168}}
+
+\vspace{0.8cm}
+{\large \textcolor{linkcolor}{\textbf{GitHub Sponsors}}}
+
+{\normalsize \url{https://github.com/sponsors/bowang168}}
+
+\vspace{0.8cm}
+{\large \textcolor{linkcolor}{\textbf{GitHub 项目主页}}}
+
+{\normalsize \url{https://github.com/bowang168/linux-ops-fieldbook}}
+
+\vspace{2cm}
+{\small MIT License | Created by Bo Wang (王波) | 2026}
+\end{center}
 
 \end{document}
