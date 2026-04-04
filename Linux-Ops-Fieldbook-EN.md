@@ -17,7 +17,7 @@ This book is written for experienced Linux engineers, SREs, DevOps practitioners
 
 ## About the Author
 
-**Bo Wang** is a Principal Technical Support Engineer at Oracle New Zealand with 17 years of enterprise IT experience across Oracle and IBM. He holds RHCE, CCNP, PMP, and OCI certifications. His expertise spans Linux kernel tuning, cloud infrastructure (OCI, AWS), storage architecture, network performance optimization, and large-scale incident response across large-scale production environments. This book distills years of frontline troubleshooting notes and best practices into a structured, actionable reference.
+**Bo Wang** is a senior Linux infrastructure engineer based in Auckland, New Zealand, with 17 years of enterprise IT experience. He holds RHCE, CCNP, PMP, and OCI certifications. His expertise spans Linux kernel tuning, cloud infrastructure (OCI, AWS), storage architecture, network performance optimization, and large-scale incident response across production environments. This book distills years of frontline troubleshooting notes and best practices into a structured, actionable reference.
 
 - Email: bowang168@users.noreply.github.com
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
@@ -206,7 +206,7 @@ echo never > /sys/kernel/mm/transparent_hugepage/defrag
 # Persistent: add to GRUB kernel cmdline
 # transparent_hugepage=never
 
-# Static Huge Pages (Oracle DB, SAP HANA)
+# Static Huge Pages (database workloads, SAP HANA)
 sysctl -w vm.nr_hugepages=1024
 grep Huge /proc/meminfo
 ```
@@ -219,7 +219,7 @@ udevadm info -a -n /dev/sdb
 
 # Custom rule example
 cat > /etc/udev/rules.d/99-custom.rules << EOF
-ACTION=="add|change", KERNEL=="sd*", ENV{ID_SERIAL}=="3600...", SYMLINK+="storage-asm/disk1"
+ACTION=="add|change", KERNEL=="sd*", ENV{ID_SERIAL}=="3600...", SYMLINK+="storage/disk1"
 EOF
 
 udevadm control --reload-rules && udevadm trigger
@@ -1086,7 +1086,7 @@ log "Done."
 grep -rn "error" /var/log/
 grep -E "error|fatal" app.log
 grep -v "^#" config.conf
-grep -c "ORA-" alert.log
+grep -c "ERROR-" alert.log
 grep -A 3 -B 1 "FATAL" app.log
 grep -P '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log
 ```
@@ -1257,8 +1257,8 @@ tuned-adm active
 # ulimits
 ulimit -a
 # /etc/security/limits.conf
-oracle soft nofile 65535
-oracle hard nofile 65535
+dbuser soft nofile 65535
+dbuser hard nofile 65535
 
 # cgroups v2
 systemd-cgtop

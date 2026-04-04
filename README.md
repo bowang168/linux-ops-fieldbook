@@ -37,7 +37,7 @@ A practical, structured reference for experienced Linux engineers, SREs, DevOps 
 
 ## About the Author
 
-**Bo Wang** — Principal Technical Support Engineer at Oracle New Zealand with 17 years of enterprise IT experience across Oracle and IBM. Certified RHCE, CCNP, PMP, and OCI professional.
+**Bo Wang** — Senior Linux infrastructure engineer based in Auckland, New Zealand, with 17 years of enterprise IT experience. Certified RHCE, CCNP, PMP, and OCI professional.
 
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
 - LinkedIn: [linkedin.com/in/bowang168](https://www.linkedin.com/in/bowang168)

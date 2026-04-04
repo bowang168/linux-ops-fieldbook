@@ -17,7 +17,7 @@
 
 ## 关于作者
 
-**Bo Wang (王波)** — Oracle 新西兰首席技术支持工程师，拥有 17 年企业级 IT 经验，先后任职于 IBM 和 Oracle。持有 RHCE、CCNP、PMP、OCI 等多项专业认证。在 Linux 内核调优、云基础设施 (OCI, AWS)、存储架构、网络性能优化和大规模故障排查（large-scale 生产环境）方面有深厚的实战积累。本书源自作者多年一线支持工作中总结的排障笔记和最佳实践，经过系统化整理后面向社区分享。
+**Bo Wang (王波)** — 资深 Linux 基础设施工程师，现居新西兰奥克兰，拥有 17 年企业级 IT 经验。持有 RHCE、CCNP、PMP、OCI 等多项专业认证。在 Linux 内核调优、云基础设施 (OCI, AWS)、存储架构、网络性能优化和大规模故障排查方面有深厚的实战积累。本书源自作者多年一线支持工作中总结的排障笔记和最佳实践，经过系统化整理后面向社区分享。
 
 - 邮箱: bowang168@users.noreply.github.com
 - GitHub: [github.com/bowang168](https://github.com/bowang168)
@@ -250,7 +250,7 @@ echo never > /sys/kernel/mm/transparent_hugepage/defrag
 # 持久化: 在 GRUB 内核参数中添加
 # transparent_hugepage=never
 
-# 静态 Huge Pages (Oracle DB / SAP HANA 场景)
+# 静态 Huge Pages (数据库 / SAP HANA 场景)
 sysctl -w vm.nr_hugepages=1024
 echo "vm.nr_hugepages = 1024" >> /etc/sysctl.d/99-hugepages.conf
 grep Huge /proc/meminfo
@@ -263,8 +263,8 @@ grep Huge /proc/meminfo
 udevadm info -a -n /dev/sdb
 
 # 自定义规则示例: 磁盘持久命名
-cat > /etc/udev/rules.d/99-oracle-disks.rules << EOF
-ACTION=="add|change", KERNEL=="sd*", ENV{ID_SERIAL}=="36001405...", SYMLINK+="storage-asm/disk1"
+cat > /etc/udev/rules.d/99-storage-disks.rules << EOF
+ACTION=="add|change", KERNEL=="sd*", ENV{ID_SERIAL}=="36001405...", SYMLINK+="storage/disk1"
 EOF
 
 # 重载规则
@@ -963,7 +963,7 @@ visudo
 
 # 最小权限原则
 deploy ALL=(ALL) /bin/systemctl restart httpd, /bin/systemctl restart nginx
-%dba ALL=(oracle) /opt/oracle/bin/dbclient
+%dba ALL=(dbuser) /opt/app/bin/dbclient
 
 # 审计日志
 Defaults logfile="/var/log/sudo.log"
@@ -1644,7 +1644,7 @@ grep -rn "error" /var/log/         # 递归搜索+行号
 grep -i "warning" *.log            # 忽略大小写
 grep -E "error|fatal|panic" app.log  # 扩展正则 (OR)
 grep -v "^#" /etc/ssh/sshd_config  # 排除注释
-grep -c "ORA-" alert.log           # 计数
+grep -c "ERROR-" alert.log         # 计数
 grep -l "TODO" src/*.py            # 仅输出文件名
 grep -A 3 -B 1 "FATAL" app.log    # 上下文
 grep -P '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' access.log  # Perl 正则匹配 IP
@@ -1695,7 +1695,7 @@ sed -i '/pattern/a\new line' file.txt  # 匹配行后添加
 du -sh /* 2>/dev/null | sort -rh | head -10
 
 # 统计日志错误类型
-grep -oP 'ORA-\d+' alert.log | sort | uniq -c | sort -rn
+grep -oP 'ERROR-\d+' alert.log | sort | uniq -c | sort -rn
 
 # IP 访问排行
 awk '{print $1}' access.log | sort | uniq -c | sort -rn | head
@@ -1908,10 +1908,10 @@ tuned-adm recommend
 ulimit -a
 
 # /etc/security/limits.conf
-oracle  soft  nofile  65535
-oracle  hard  nofile  65535
-oracle  soft  nproc   65535
-oracle  hard  nproc   65535
+dbuser  soft  nofile  65535
+dbuser  hard  nofile  65535
+dbuser  soft  nproc   65535
+dbuser  hard  nproc   65535
 *       soft  core    unlimited
 
 # systemd 服务限制
