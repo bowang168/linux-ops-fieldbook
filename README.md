@@ -14,11 +14,6 @@ A practical, structured reference for experienced Linux engineers, SREs, DevOps 
 - [English Edition](https://bowang168.github.io/linux-ops-fieldbook/) — Full book on GitHub Pages
 - [中文版](https://bowang168.github.io/linux-ops-fieldbook/zh/) — 完整中文版在线阅读
 
-## Download PDF
-
-- [English PDF](https://github.com/bowang168/linux-ops-fieldbook/raw/main/pdf/Linux-Ops-Fieldbook-EN.pdf)
-- [中文 PDF](https://github.com/bowang168/linux-ops-fieldbook/raw/main/pdf/Linux-Ops-Fieldbook-ZH.pdf)
-
 ## Contents
 
 | Chapter | Topic |
